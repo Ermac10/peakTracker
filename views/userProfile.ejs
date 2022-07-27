@@ -1,13 +1,13 @@
 <h1>USER PROFILE</h1>
 <a class="button" href="/user/new" type="button">Create New Peak Entry</a>
 
-<h2>bagged</h2>
+<h2>BAGGED</h2>
 <% allPeaks.forEach(peak => { if(peak.bagged===true) {%>
-<div class="bagged">
-<table>
-    <thead>
+<div class="container">
+<table class="table">
+    <thead class="header_item">
         <tr>
-            <th>PEAK</th>
+            <th class="filter_link">PEAK</th>
             <th>ELEVATION</th>
             <th>RANGE</th>
         </tr>
@@ -15,20 +15,20 @@
     <tbody>
         <tr>
             <td>
-                <div>
-                    <a href="/user/:id"><%= peak.peak %></a>
+                <div class="table-data">
+                    <a href="/user/<%=peak._id%>"><%= peak.peak %></a>
                 </div>
             </td>
             <% fourteener.map(peakInfo => { 
                 if(peak.peak === peakInfo.Peak) {%>
             <td>
-                <div>
+                <div class="table-data">
                     <a> <%= peakInfo.Elevation %><%;%></a>
                 </div>
             </td>
 
             <td>
-                <div>
+                <div class="table-data">
                     <a> <%= peakInfo.Range %> <%}%></a>
                 </div>
             </td>
@@ -39,11 +39,11 @@
 </div>
 <%}});%> 
 
-<h2>Attempted</h2>
+<h2>ATTEMPTED</h2>
 <% allPeaks.forEach(peak => { if(peak.bagged===false) {%>
-<div class="Attempted">
-<table>
-    <thead>
+<div class="container">
+<table class="table">
+    <thead class="header_item">
         <tr>
             <th>PEAK</th>
             <th>ELEVATION</th>
@@ -52,20 +52,20 @@
     </thead>
     <tbody>
         <tr>
-            <td>
+            <td class="table-data">
                 <a href="/user/:id"><%= peak.peak %></a>
             </td>
         
                 <% fourteener.map(peakInfo => { 
                 if(peak.peak === peakInfo.Peak) {%>
             <td>
-                <div>
+                <div class="table-data">
                     <a> <%= peakInfo.Elevation %> <%;%></a>
                 </div>
             </td>
     
             <td>
-                <div>
+                <div class="table-data">
                     <a> <%= peakInfo.Range %> <%}%></a>
                 </div>
             </td>
@@ -77,56 +77,49 @@
 </div>
 <%}});%>
 
-<h2>Unattempted</h2>
+<h2>UNATTEMPTED</h2>
 
-<% const arrDiff = (fourteener, allPeaks) => {
-    const difference = [];
-    fourteener.forEach(el1 => {
-        el1IsPresentInArr2 = allPeaks.some(el2 => el2.peak === el1.Peak);
-
-        if(!el1IsPresentInArr2) {
-            difference.push(el1);
-        }
+<%function getDifference(fourteener, allPeaks) {
+  return fourteener.filter(object1 => {
+    return !allPeaks.some(object2 => {
+      return object1.Peak === object2.peak;
     });
-    console.log(difference.length)
-    return difference;
-} 
+  });
+}
 
-arrDiff(fourteener, allPeaks)%>
+const difference = [
+  ...getDifference(fourteener, allPeaks),
+  ...getDifference(allPeaks, fourteener)
+];
 
-// <div class="Unattempted">
-  
-//     <table>
-//         <thead>
-//             <tr>
-//                 <th>PEAK</th>
-//                 <th>ELEVATION</th>
-//                 <th>RANGE</th>
-//             </tr>
-//         </thead>
-//         <tbody>
-//             <tr>
-               
-//                 <td>
-//                     <div>
-//                       <a> </a>
-//                     </div>
-//                 </td>
-//                 <td>
-//                     <div>
-//                       <a> </a>
-//                     </div>
-//                 </td>
-//                 <td>
-//                     <div>
-//                       <a> </a>
-//                     </div>
-//                 </td>
-                
-//             </tr>
-//         </tbody>
-//     </table>
-//     </div>
+difference.map(unPeak => {%>
+
+<div class="container">
+<table class="table">
+    <thead class="header_item">
+        
+        <tr>
+            <th>PEAK</th>
+            <th>ELEVATION</th>
+            <th>RANGE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="table-data">
+                <a href="/user/:id"><%= unPeak.Peak %></a>
+            </td>
+            <td class="table-data">
+                <a><%= unPeak.Elevation %></a>
+            </td>
+            <td class="table-data">
+                <a><%= unPeak.Range %></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<%})%>
 
 
 

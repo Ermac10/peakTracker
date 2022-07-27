@@ -79,20 +79,16 @@ router.get('/user', (req, res) => {
         res.render('userProfile.ejs', {allPeaks, fourteener});
     })
 })
-// router.get('/user', (req, res) => {
-//     res.render('userProfile.ejs', {fourteener})
-// })
+router.get('/user/<% product._id %>', (req, res) => {
+    Peak.find({}, (err, Peak) => {
+        res.render('showPeak.ejs', )
+    })
+})
 
 // NEW
 router.get('/user/new', (req, res) => {
     res.render('newPeak.ejs', {fourteener})
 })
-
-// router.get('/user/new', (req, res) => {
-//     fourteener.forEach(peak => {
-        
-//     })
-// })
 
 // DELETE
 // router.delete('user/:id', (req, res) => {
@@ -121,18 +117,18 @@ router.get('/user/new', (req, res) => {
 })
 
  // EDIT
-// router.get('/user/edit', (req, res) => {
+// router.get('/user/:id/edit', (req, res) => {
 //     Schema.findById(req.params.id, (error, foundPeak) => {
 //         res.render('editPeak.ejs', {foundPeak});
 //     })
 // })
 
- // SHOW
-//  router.get('user/:id', (req, res) => {
-//     Schema.findById(req.params.id, (error, foundPeak) => {
-//         res.render('showPeak.ejs', {foundPeak})
-//     })
-// })
+//  SHOW
+ router.get('/user/:id', (req, res) => {
+    Peak.findById(req.params.id, (error, foundPeak) => {
+        res.render('showPeak.ejs', {foundPeak})
+    })
+})
 
 
 

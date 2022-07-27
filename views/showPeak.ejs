@@ -1,13 +1,15 @@
 <div>
-    <h1><%= foundPeak.Peak %></h1>
-    <img src="<%= foundProduct.Img %>" alt="<%= foundPeak.Peak %>" />
+    <h1><%= foundPeak.peak %></h1>
+    
     <div>
-    <a class='button' href="/products/<%= foundProduct._id %>/edit">Edit Product</a>
-    <p><%= foundProduct.Description %></p>
-    <p>$<%= foundProduct.Price %></p>
-    <p>Qty<%= foundProduct.Qty %></p>
+    <a class='button' href="/user/<%= foundPeak._id %>/edit">Edit Peak Information</a>
+    <p>Bagged?<%= foundPeak.bagged %></p>
+    <p>Start Time:<%= foundPeak.start %></p>
+    <p>Summited Time:<%= foundPeak.summited %></p>
+    <p>End Time:<%= foundPeak.end %></p>
+    <p>Date:<%= foundPeak.date %></p>
     <button class="buy-btn">Add to Cart</button>
-    <form action="/products/<%= foundProduct._id %>?_method=DELETE" method="POST" >
+    <form action="/user/<%= foundPeak._id %>?_method=DELETE" method="POST" >
       <input type="submit" value="DELETE">
     </form>
   </div>
