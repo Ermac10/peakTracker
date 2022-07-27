@@ -1,0 +1,14 @@
+<div>
+    <h1><%= foundPeak.Peak %></h1>
+    <img src="<%= foundProduct.Img %>" alt="<%= foundPeak.Peak %>" />
+    <div>
+    <a class='button' href="/products/<%= foundProduct._id %>/edit">Edit Product</a>
+    <p><%= foundProduct.Description %></p>
+    <p>$<%= foundProduct.Price %></p>
+    <p>Qty<%= foundProduct.Qty %></p>
+    <button class="buy-btn">Add to Cart</button>
+    <form action="/products/<%= foundProduct._id %>?_method=DELETE" method="POST" >
+      <input type="submit" value="DELETE">
+    </form>
+  </div>
+  </div>

@@ -1,0 +1,132 @@
+<h1>USER PROFILE</h1>
+<a class="button" href="/user/new" type="button">Create New Peak Entry</a>
+
+<h2>bagged</h2>
+<% allPeaks.forEach(peak => { if(peak.bagged===true) {%>
+<div class="bagged">
+<table>
+    <thead>
+        <tr>
+            <th>PEAK</th>
+            <th>ELEVATION</th>
+            <th>RANGE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div>
+                    <a href="/user/:id"><%= peak.peak %></a>
+                </div>
+            </td>
+            <% fourteener.map(peakInfo => { 
+                if(peak.peak === peakInfo.Peak) {%>
+            <td>
+                <div>
+                    <a> <%= peakInfo.Elevation %><%;%></a>
+                </div>
+            </td>
+
+            <td>
+                <div>
+                    <a> <%= peakInfo.Range %> <%}%></a>
+                </div>
+            </td>
+            <%}) %>
+        </tr>
+    </tbody>
+</table>
+</div>
+<%}});%> 
+
+<h2>Attempted</h2>
+<% allPeaks.forEach(peak => { if(peak.bagged===false) {%>
+<div class="Attempted">
+<table>
+    <thead>
+        <tr>
+            <th>PEAK</th>
+            <th>ELEVATION</th>
+            <th>RANGE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <a href="/user/:id"><%= peak.peak %></a>
+            </td>
+        
+                <% fourteener.map(peakInfo => { 
+                if(peak.peak === peakInfo.Peak) {%>
+            <td>
+                <div>
+                    <a> <%= peakInfo.Elevation %> <%;%></a>
+                </div>
+            </td>
+    
+            <td>
+                <div>
+                    <a> <%= peakInfo.Range %> <%}%></a>
+                </div>
+            </td>
+            <%}) %>
+
+        </tr>
+    </tbody>
+</table>
+</div>
+<%}});%>
+
+<h2>Unattempted</h2>
+
+<% const arrDiff = (fourteener, allPeaks) => {
+    const difference = [];
+    fourteener.forEach(el1 => {
+        el1IsPresentInArr2 = allPeaks.some(el2 => el2.peak === el1.Peak);
+
+        if(!el1IsPresentInArr2) {
+            difference.push(el1);
+        }
+    });
+    console.log(difference.length)
+    return difference;
+} 
+
+arrDiff(fourteener, allPeaks)%>
+
+// <div class="Unattempted">
+  
+//     <table>
+//         <thead>
+//             <tr>
+//                 <th>PEAK</th>
+//                 <th>ELEVATION</th>
+//                 <th>RANGE</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+               
+//                 <td>
+//                     <div>
+//                       <a> </a>
+//                     </div>
+//                 </td>
+//                 <td>
+//                     <div>
+//                       <a> </a>
+//                     </div>
+//                 </td>
+//                 <td>
+//                     <div>
+//                       <a> </a>
+//                     </div>
+//                 </td>
+                
+//             </tr>
+//         </tbody>
+//     </table>
+//     </div>
+
+
+

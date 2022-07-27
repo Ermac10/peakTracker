@@ -1,0 +1,39 @@
+
+<form action="/user" method="POST">
+    <h1>Create a New Peak Entry</h1>
+
+    <label for="peak">Peak:</label>
+    <select name = 'peak'<% fourteener.map(peak => { %>>
+        <option value="<%- peak.Peak %>">
+            <%= peak.Peak %>
+        <%}) %></option>
+    </select>
+    
+    <label for="bagged">Bagged?:</label>
+    <select name = 'bagged'>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    
+    <label for="date">Date:</label>
+    <input type="date" id="start" name="trip-start"
+       value="date">
+    
+    <label for="start">Start Time:</label>
+    <input type="time" name="start" id="start">
+
+    <label for="summited">Summited Time:</label>
+    <input type="time" name="summited" id="summited" value="N/A">
+
+    <label for="end">End Time:</label>
+    <input type="time" name="end" id="end">
+    
+    <label for="notes">Hike Notes:</label>
+    <textarea rows="4" cols="50">
+        Baggin Peaks and Havin Drinks
+        </textarea>
+    
+
+    <input class="button" type="submit" value="Save Changes" href="/user"></label>
+    
+</form>

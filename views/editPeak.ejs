@@ -1,0 +1,21 @@
+
+<form action="/user/edit<%= foundPeak._id %>?_method=PUT" method="POST">
+    <h1>Edit Peak</h1>
+    <label for="Peak">Peak:</label>
+    <input type="text" name="Peak" id="Peak" value="<%= foundPeak.Peak %>">
+    <label for="bagged">bagged:</label>
+    <input type="text" name="bagged" id="bagged" value="<%= foundPeak.bagged %>">
+    <label for="date">date:</label>
+    <input type="text" name="date" id="date" value="<%= foundPeak.date %>">
+    <label for="start">start Time:</label>
+    <input type="number" name="start" id="start" value="<%= foundPeak.start %>">
+    <label for="summited">summited Time:</label>
+    <input type="number" name="summited" id="summited" value="<%= foundPeak.summited %>">
+    <label for="end">end Time:</label>
+    <input type="number" name="end" id="end" value="<%= foundPeak.end %>">
+    <label for="notes">Hike notes:</label>
+    <input type="number" name="notes" id="notes" value="<%= foundPeak.notes %>">
+
+    <input class="button" type="submit" value="Save Changes" href="/user"></label>
+    
+</form>
