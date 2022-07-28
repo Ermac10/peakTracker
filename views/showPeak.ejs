@@ -8,7 +8,8 @@
     <p>Summited Time:<%= foundPeak.summited %></p>
     <p>End Time:<%= foundPeak.end %></p>
     <p>Date:<%= foundPeak.date %></p>
-    <button class="buy-btn">Add to Cart</button>
+    <p>Notes:<%= foundPeak.notes %></p>
+    
     <form action="/user/<%= foundPeak._id %>?_method=DELETE" method="POST" >
       <input type="submit" value="DELETE">
     </form>

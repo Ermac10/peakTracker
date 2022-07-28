@@ -1,20 +1,30 @@
+<h1><%=foundPeak.peak%></h1>
 
-<form action="/user/edit<%= foundPeak._id %>?_method=PUT" method="POST">
-    <h1>Edit Peak</h1>
-    <label for="Peak">Peak:</label>
-    <input type="text" name="Peak" id="Peak" value="<%= foundPeak.Peak %>">
-    <label for="bagged">bagged:</label>
-    <input type="text" name="bagged" id="bagged" value="<%= foundPeak.bagged %>">
-    <label for="date">date:</label>
-    <input type="text" name="date" id="date" value="<%= foundPeak.date %>">
-    <label for="start">start Time:</label>
-    <input type="number" name="start" id="start" value="<%= foundPeak.start %>">
-    <label for="summited">summited Time:</label>
-    <input type="number" name="summited" id="summited" value="<%= foundPeak.summited %>">
-    <label for="end">end Time:</label>
-    <input type="number" name="end" id="end" value="<%= foundPeak.end %>">
-    <label for="notes">Hike notes:</label>
-    <input type="number" name="notes" id="notes" value="<%= foundPeak.notes %>">
+<form action="/user/<%= foundPeak._id %>?_method=PUT" method="POST">
+    <h2>Edit Peak</h2>
+
+    <label for="bagged">Bagged?:</label>
+    <select name = 'bagged'>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+
+    <label for="hike-date">Date:</label>
+    <input type="date" id="hike-date" name="hike-date" value="">
+
+    <label for="start">Start Time:</label>
+    <input type="time" name="start" id="start" value="<%=foundPeak.start%>">
+
+    <label for="summited">Summited Time:</label>
+    <input type="time" name="summited" id="summited" value="<%=foundPeak.summited%>">
+
+    <label for="end">End Time:</label>
+    <input type="time" name="end" id="end" value="<%=foundPeak.end%>">
+
+    <label for="notes">Hike Notes:</label>
+    <textarea id="notes" name="notes" rows="4" cols="50">
+        <%=foundPeak.notes%>
+        </textarea>
 
     <input class="button" type="submit" value="Save Changes" href="/user"></label>
     

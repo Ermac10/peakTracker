@@ -1,5 +1,5 @@
 
-<form action="/user" method="POST">
+<form action="/user/" method="POST">
     <h1>Create a New Peak Entry</h1>
 
     <label for="peak">Peak:</label>
@@ -15,9 +15,8 @@
         <option value="false">No</option>
     </select>
     
-    <label for="date">Date:</label>
-    <input type="date" id="start" name="trip-start"
-       value="date">
+    <label for="hike-date">Date:</label>
+    <input type="date" id="hike-date" name="hike-date" value="">
     
     <label for="start">Start Time:</label>
     <input type="time" name="start" id="start">
@@ -29,7 +28,7 @@
     <input type="time" name="end" id="end">
     
     <label for="notes">Hike Notes:</label>
-    <textarea rows="4" cols="50">
+    <textarea id="notes" name="notes" rows="4" cols="50">
         Baggin Peaks and Havin Drinks
         </textarea>
     

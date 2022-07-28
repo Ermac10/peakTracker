@@ -79,7 +79,7 @@ router.get('/user', (req, res) => {
         res.render('userProfile.ejs', {allPeaks, fourteener});
     })
 })
-router.get('/user/<% product._id %>', (req, res) => {
+router.get('/user/<% peak._id %>', (req, res) => {
     Peak.find({}, (err, Peak) => {
         res.render('showPeak.ejs', )
     })
@@ -91,23 +91,23 @@ router.get('/user/new', (req, res) => {
 })
 
 // DELETE
-// router.delete('user/:id', (req, res) => {
-//     Schema.findByIdAndDelete(req.params.id, (error, deleteProduct) => {
-//         res.redirect('/user');
-//     })
-// })
+router.delete('/user/:id', (req, res) => {
+    Peak.findByIdAndDelete(req.params.id, (error, deletePeak) => {
+        res.redirect('/user');
+    })
+})
 
 // UPDATE
-// router.put('/:id', (req, res) => {
-//     Schema.findByIdAndUpdate(
-//         req.params.id,
-//         req.body,
-//         {new: true},
-//         (error, updatedPeak) => {
-//             res.redirect('/user');  
-//         }
-//     )
-// })
+router.put('/user/:id', (req, res) => {
+    Peak.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new: true},
+        (error, updatedPeak) => {
+            res.redirect('/user');  
+        }
+    )
+})
 
  // CREATE
  router.post('/user', (req, res) => {
@@ -117,11 +117,11 @@ router.get('/user/new', (req, res) => {
 })
 
  // EDIT
-// router.get('/user/:id/edit', (req, res) => {
-//     Schema.findById(req.params.id, (error, foundPeak) => {
-//         res.render('editPeak.ejs', {foundPeak});
-//     })
-// })
+router.get('/user/:id/edit', (req, res) => {
+    Peak.findById(req.params.id, (error, foundPeak) => {
+        res.render('editPeak.ejs', {foundPeak});
+    })
+})
 
 //  SHOW
  router.get('/user/:id', (req, res) => {
