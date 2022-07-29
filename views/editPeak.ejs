@@ -1,3 +1,4 @@
+<div class="container">
 <h1><%=foundPeak.peak%></h1>
 
 <form action="/user/<%= foundPeak._id %>?_method=PUT" method="POST">
@@ -10,7 +11,7 @@
     </select>
 
     <label for="hike-date">Date:</label>
-    <input type="date" id="hike-date" name="hike-date" value="">
+    <input type="date" id="hike-date" name="date">
 
     <label for="start">Start Time:</label>
     <input type="time" name="start" id="start" value="<%=foundPeak.start%>">
@@ -29,3 +30,5 @@
     <input class="button" type="submit" value="Save Changes" href="/user"></label>
     
 </form>
+
+</div>

@@ -1,13 +1,110 @@
+body {
+    /* background-color: #46443C; */
+    background-color: #A7C4C2;
+}
+h1 {
+    font-family: 'Rock Salt', cursive;
+    color: #0F0736;
+}
+h2, h3, h4 {
+    font-size: xx-large;
+    font-family: 'Bebas Neue', cursive;
+    color: #0F0736;
+        
+   
+}
+table {
+    justify-content: center;
+    width:45%;
+    border: solid 2px;
+    border-color: #46443C;
 
+   
+}
+th {
+    width:18%;
+    background-color: #0F0736;
+    border-style: ridge;
+    border-color: #46443C;
+    color: #FFF9EB;
+    font-family: 'Rock Salt', cursive;
+    font-size: 12px;
+    height: 30%;
+}
+td {
+    color: #0F0736;
+    width: 15%;
+    font-size: 14px;
+    text-align: center;
+    border-style:groove;
+    border-color: #46443C;
+    background-color: #FFF9EB;
+    font-family: 'Bebas Neue', cursive;
+}
+td:hover {
+    background-color: #D64045;
+}
+.welcome-container {
+    height: 300px;
+    position: relative;
+}
+.welcome-title {
+    position:relative;
+    text-align: center;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    position: relative;
+}
+.button-container img{
+    width: auto;
+    max-height: 200px;
+    margin: 0;
+    position:relative;  
+    border: solid #46443C;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.button-container .welcome-button {
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #0F0736;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.button-container .welcome-button:hover {
+    background-color: #D64045;
+    
+}
+.user {
+    display:flex;
+    justify-content: flex-start;
+    font-size: 50px;
+}
 .button {
-        font: bold 11px Arial;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 15px;
         text-decoration: none;
-        background-color: #EEEEEE;
-        color: #333333;
+        color: #FFF9EB;
+        background-color: #0F0736;
         padding: 2px 6px 2px 6px;
-        border-top: 1px solid #CCCCCC;
-        border-right: 1px solid #333333;
-        border-bottom: 1px solid #333333;
-        border-left: 1px solid #CCCCCC;
-      
+        border-top: 1px solid #0F0736;
+        border-right: 1px solid #46443C;
+        border-bottom: 1px solid #46443C;
+        border-left: 1px solid #0F0736;      
+}
+.button:hover {
+    background-color: #D64045;
+}
+.peak-container {
+   position:relative;
 }

@@ -1,38 +1,59 @@
+<div class="container">
+  <h1>Create a New Peak Entry</h1>
+  <a class="button" href="/user" type="button">Return to Profile</a>
+    <form class="form-horizontal" action="/user/" method="POST">
+    
+        <div>
+            <div class="form-group form-group-lg">
+                <label class="col-sm-1 control-label" for="peak">Peak:</label>
+            </div>
 
-<form action="/user/" method="POST">
-    <h1>Create a New Peak Entry</h1>
+            <div class="col-xs-4">
+                <select class="form-control" name = 'peak'<% fourteener.map(peak => { %>>
+                    <option value="<%- peak.Peak %>">
+                        <%= peak.Peak %>
+                    <%}) %></option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="bagged">Bagged?:</label>
+            <select name = 'bagged'>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="hike-date">Date:</label>
+            <input type="date" id="hike-date" name="date">
+        </div>
+    
+        <div class="form-group">
+            <label for="start">Start Time:</label>
+            <input type="time" name="start" id="start">
+        </div>
 
-    <label for="peak">Peak:</label>
-    <select name = 'peak'<% fourteener.map(peak => { %>>
-        <option value="<%- peak.Peak %>">
-            <%= peak.Peak %>
-        <%}) %></option>
-    </select>
-    
-    <label for="bagged">Bagged?:</label>
-    <select name = 'bagged'>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-    </select>
-    
-    <label for="hike-date">Date:</label>
-    <input type="date" id="hike-date" name="hike-date" value="">
-    
-    <label for="start">Start Time:</label>
-    <input type="time" name="start" id="start">
+        <div class="form-group">
+            <label for="summited">Summited Time:</label>
+            <input type="time" name="summited" id="summited" value="N/A">
+        </div>
 
-    <label for="summited">Summited Time:</label>
-    <input type="time" name="summited" id="summited" value="N/A">
-
-    <label for="end">End Time:</label>
-    <input type="time" name="end" id="end">
+        <div class="form-group">
+            <label for="end">End Time:</label>
+            <input type="time" name="end" id="end">
+        </div>
     
-    <label for="notes">Hike Notes:</label>
-    <textarea id="notes" name="notes" rows="4" cols="50">
-        Baggin Peaks and Havin Drinks
-        </textarea>
+        <div class="form-group">
+            <label for="notes">Hike Notes:</label>
+            <textarea class="form-control-static: focus" id="notes" name="notes" rows="4" cols="50">
+                Baggin Peaks and Havin Drinks
+                </textarea>
+        </div>
     
 
-    <input class="button" type="submit" value="Save Changes" href="/user"></label>
+    <input class="button" type="submit" value="Save Changes" href="/user"></input>
     
-</form>
+    </form>
+</div>

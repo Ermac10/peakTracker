@@ -3,3 +3,11 @@ node_modules
 
 
 <img src="<%= foundProduct.Img %>" alt="<%= foundPeak.Peak %>" />
+
+Palette:
+46443C
+BDBBB2
+A7C4C2
+0F0736
+D64045
+FFF9EB
