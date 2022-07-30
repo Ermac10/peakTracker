@@ -18,8 +18,6 @@ table {
     width:45%;
     border: solid 2px;
     border-color: #46443C;
-
-   
 }
 th {
     width:18%;
@@ -49,6 +47,15 @@ td:hover {
     position: relative;
 }
 .welcome-title {
+    position:relative;
+    text-align: center;
+    text-decoration:underline #46443C;
+    margin-bottom: 0px;
+}
+.tag-line {
+    font-family: 'Rock Salt', cursive;
+    font-size:small;
+    margin: 0px;
     position:relative;
     text-align: center;
 }
@@ -107,4 +114,78 @@ td:hover {
 }
 .peak-container {
    position:relative;
+}
+.new-container, .edit-container {
+    height: 300px;
+    position: relative;
+}
+.form-new, .form-edit {
+    background-image: url('/Peak-Bagger.jpeg');
+    background-position: center;
+    background-size: contain;
+    border: solid #46443C;
+}
+.newForm-container, .editForm-container {
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+.label {
+   display: inline-block;
+   width: 160px; 
+   margin: 0;
+   font-family: 'Bebas Neue', cursive;
+   font-size:x-large;
+}
+.field {
+    color: #FFF9EB;
+    width: 215px;
+    height: 22px;
+    padding: 0px;
+    border: 1px;
+    background-color: #0F0736;
+    opacity:.8;
+    
+}
+.hike {
+    display: flex;
+}
+.area {
+    color: #FFF9EB;
+    background-color: #0F0736;
+    opacity:.8;
+}
+.show-container {
+    height: 300px;
+    position: relative;
+}
+.showData-container {
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.edit {
+    position: relative;
+    margin-top: 150px;
+    margin-bottom: 0px;
+}
+#show-table {
+    position: relative;
+    width: 100%;
+    margin-top: 0px;
+}
+.show-head {
+    width: 45px;
+}
+.show-data {
+    width: 500px;
 }

@@ -8,6 +8,7 @@ const peakSchema = new Schema({
     start: { type: String, required: true },
     summited: { type: String, required: false},
     end: { type: String, required: true},
+    drink: {type: Number, required: false},
     notes: { type: String, required: false },
     
     }, {timestamps: true});

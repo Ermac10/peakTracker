@@ -1,59 +1,61 @@
-<div class="container">
-  <h1>Create a New Peak Entry</h1>
-  <a class="button" href="/user" type="button">Return to Profile</a>
-    <form class="form-horizontal" action="/user/" method="POST">
-    
-        <div>
-            <div class="form-group form-group-lg">
-                <label class="col-sm-1 control-label" for="peak">Peak:</label>
+<div class="new-container">
+    <h1 class="welcome-title">Bag a New Peak</h1>
+    <a class="button" href="/user" type="button">Return to Profile</a>
+    <div class="newForm-container">
+        <form class="form-new" action="/user/" method="POST">
+        
+            <div class="form-peak">
+                    <label class="label" for="peak">Peak:</label>
+                    <select class="field" name = 'peak'<% fourteener.map(peak => { %>>
+                        <option value="<%- peak.Peak %>">
+                            <%= peak.Peak %>
+                        <%}) %></option>
+                    </select>
             </div>
-
-            <div class="col-xs-4">
-                <select class="form-control" name = 'peak'<% fourteener.map(peak => { %>>
-                    <option value="<%- peak.Peak %>">
-                        <%= peak.Peak %>
-                    <%}) %></option>
+        
+            <div class="form-bagged">
+                <label class="label" for="bagged">Bagged?:</label>
+                <select class="field" name = 'bagged'>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
                 </select>
             </div>
-        </div>
-    
-        <div class="form-group">
-            <label for="bagged">Bagged?:</label>
-            <select name = 'bagged'>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
-        </div>
-    
-        <div class="form-group">
-            <label for="hike-date">Date:</label>
-            <input type="date" id="hike-date" name="date">
-        </div>
-    
-        <div class="form-group">
-            <label for="start">Start Time:</label>
-            <input type="time" name="start" id="start">
-        </div>
+        
+            <div>
+                <label class="label" for="hike-date">Date:</label>
+                <input class="field" type="date" id="hike-date" name="date">
+            </div>
+        
+            <div>
+                <label class="label" for="start">Start Time:</label>
+                <input class="field" type="time" name="start" id="start">
+            </div>
 
-        <div class="form-group">
-            <label for="summited">Summited Time:</label>
-            <input type="time" name="summited" id="summited" value="N/A">
-        </div>
+            <div>
+                <label class="label" for="summited">Summited Time:</label>
+                <input class="field" type="time" name="summited" id="summited" value="N/A">
+            </div>
 
-        <div class="form-group">
-            <label for="end">End Time:</label>
-            <input type="time" name="end" id="end">
-        </div>
-    
-        <div class="form-group">
-            <label for="notes">Hike Notes:</label>
-            <textarea class="form-control-static: focus" id="notes" name="notes" rows="4" cols="50">
-                Baggin Peaks and Havin Drinks
+            <div>
+                <label class="label" for="end">End Time:</label>
+                <input class="field" type="time" name="end" id="end">
+            </div>
+
+            <div>
+                <label class="label" for="drink">Number of Drinks:</label>
+                <input class="field" type="number" name="drink" id="drink">
+            </div>
+        
+            <div>
+                <label class="label hike" for="notes">Hike Notes:</label>
+                <textarea class="area" id="notes" name="notes" rows="4" cols="45">
+        Baggin Peaks and Havin Drinks
                 </textarea>
-        </div>
-    
+            </div>
+        
 
-    <input class="button" type="submit" value="Save Changes" href="/user"></input>
-    
-    </form>
+        <input class="button" type="submit" value="Save Changes" href="/user"></input>
+        
+        </form>
+    </div>
 </div>

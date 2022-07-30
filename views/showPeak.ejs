@@ -1,17 +1,78 @@
-<div class="container">
-    <h1><%= foundPeak.peak %></h1>
-    <a class="button" href="/user" type="button">Return to Profile</a>
-    <div>
-    <a class='button' href="/user/<%= foundPeak._id %>/edit">Edit Peak Information</a>
-    <p>Bagged?<%= foundPeak.bagged %></p>
-    <p>Start Time:<%= foundPeak.start %></p>
-    <p>Summited Time:<%= foundPeak.summited %></p>
-    <p>End Time:<%= foundPeak.end %></p>
-    <p>Date:<%= foundPeak.date %></p>
-    <p>Notes:<%= foundPeak.notes %></p>
-    
-    <form  action="/user/<%= foundPeak._id %>?_method=DELETE" method="POST" >
-      <input class = "button" type="submit" value="DELETE">
-    </form>
-  </div>
-  </div>
+<div class="show-container"> 
+<h1 class="welcome-title"><%= foundPeak.peak %></h1>
+<a class="button" href="/user" type="button">Return to Profile</a>
+
+    <div class="showData-container"> 
+        <a class='button edit' href="/user/<%= foundPeak._id %>/edit">Edit Peak Information</a>  
+        <table id="show-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <th class="show-head">
+                            <p>Bagged?</p>
+                        </th>
+                        <td class="show-data">
+                            <p class="label"><%= foundPeak.bagged %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="show-head">
+                            <p>Start Time:</p>
+                        </th> 
+                        <td class="show-data">
+                            <p class="label"><%= foundPeak.start %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="show-head">
+                            <p>Summited Time:</p>    
+                        </th> 
+                        <td class="show-data">
+                            <p class="label"><%= foundPeak.summited %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="show-head">                           
+                            <p>End Time:</p>                         
+                        </th> 
+                        <td class="show-data">                           
+                            <p class="label"><%= foundPeak.end %></p>                        
+                        </td> 
+                    </tr>
+                    <tr>
+                        <th class="show-head">                          
+                            <p>Date:</p>                         
+                        </th> 
+                        <td class="show-data">                          
+                            <p class="label"><%= foundPeak.date %></p>                        
+                        </td> 
+                    </tr>
+                    <tr>
+                        <th class="show-head">                          
+                            <p>Number of Drinks:</p>                          
+                        </th> 
+                        <td class="show-data">                          
+                            <p class="label"><%= foundPeak.drink %></p>                          
+                        </td> 
+                    </tr>
+                    <tr>
+                        <th class="show-head">                          
+                            <p>Notes:</p>                       
+                        </th>
+                        <td class="show-data">                          
+                            <p class="label"><%= foundPeak.notes %></p>                       
+                        </td>
+                    </tr>                                                                           
+            </tbody>
+        </table>
+        
+        <form  action="/user/<%= foundPeak._id %>?_method=DELETE" method="POST" >
+        <input class = "button" type="submit" value="DELETE">
+        </form>
+    </div>
+</div>

@@ -1,34 +1,54 @@
-<div class="container">
-<h1><%=foundPeak.peak%></h1>
+<div class="edit-container">
+    <h1 class="welcome-title"><%=foundPeak.peak%></h1> 
+    <a class="button" href="/user" type="button">Return to Profile</a>
 
-<form action="/user/<%= foundPeak._id %>?_method=PUT" method="POST">
-    <h2>Edit Peak</h2>
+    <div class="editForm-container">
+        <form class="form-edit"action="/user/<%= foundPeak._id %>?_method=PUT" method="POST">
+             <div class="form-peak">
+                    <label class="label" for="peak">Peak:</label>
+                    <select class="field" name="peak">
+                        <option value="<%- foundPeak.peak %>">
+                            <%= foundPeak.peak %>
+                       </option>
+                    </select>
+            </div>
+            <div class="form-bagged">
+                <label class="label" for="bagged">Bagged?:</label>
+                <select class="field" name="bagged">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div>
+                <label class="label" for="hike-date">Date:</label>
+                <input class="field" type="date" id="hike-date" name="date">
+            </div>
+            <div>
+                <label class="label" for="start">Start Time:</label>
+                <input class="field" type="time" name="start" id="start" value="<%=foundPeak.start%>">
+            </div>
+            <div>
+                <label class="label" for="summited">Summited Time:</label>
+                <input class="field" type="time" name="summited" id="summited" value="<%=foundPeak.summited%>">
+            </div>
+            <div>
+                <label class="label" for="end">End Time:</label>
+                <input class="field" type="time" name="end" id="end" value="<%=foundPeak.end%>">
+            </div>
+            <div>
+                <label class="label" for="drinks">Number of Drinks:</label>
+                <input class="field" type="number" name="drinks" id="drinks" value="<%foundPeak.drink%>">
+            </div>
+            <div>
+                <label class="label hike" for="notes">Hike Notes:</label>
+                <textarea class="area" id="notes" name="notes" rows="4" cols="45">
+                    <%=foundPeak.notes%>
+                </textarea>
+            </div>
 
-    <label for="bagged">Bagged?:</label>
-    <select name = 'bagged'>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-    </select>
 
-    <label for="hike-date">Date:</label>
-    <input type="date" id="hike-date" name="date">
-
-    <label for="start">Start Time:</label>
-    <input type="time" name="start" id="start" value="<%=foundPeak.start%>">
-
-    <label for="summited">Summited Time:</label>
-    <input type="time" name="summited" id="summited" value="<%=foundPeak.summited%>">
-
-    <label for="end">End Time:</label>
-    <input type="time" name="end" id="end" value="<%=foundPeak.end%>">
-
-    <label for="notes">Hike Notes:</label>
-    <textarea id="notes" name="notes" rows="4" cols="50">
-        <%=foundPeak.notes%>
-        </textarea>
-
-    <input class="button" type="submit" value="Save Changes" href="/user"></label>
-    
-</form>
-
+            <input class="button" type="submit" value="Save Changes" href="/user"></label>
+        
+        </form>
+    </div>
 </div>
