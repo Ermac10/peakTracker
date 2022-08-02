@@ -1,7 +1,9 @@
 <div class="edit-container">
+    <img id="user-image" src="/Peak-Bagger.jpeg"></img>
     <h1 class="welcome-title"><%=foundPeak.peak%></h1> 
+    <h3 id="user-name">USER NAME</h3>
     <a class="button" href="/user" type="button">Return to Profile</a>
-
+<!--  enctype="multipart/form-data"-->
     <div class="editForm-container">
         <form class="form-edit"action="/user/<%= foundPeak._id %>?_method=PUT" method="POST">
              <div class="form-peak">
@@ -36,8 +38,12 @@
                 <input class="field" type="time" name="end" id="end" value="<%=foundPeak.end%>">
             </div>
             <div>
-                <label class="label" for="drinks">Number of Drinks:</label>
-                <input class="field" type="number" name="drinks" id="drinks" value="<%foundPeak.drink%>">
+                <label class="label" for="drink">Number of Drinks:</label>
+                <input class="field" type="number" name="drink" id="drink">
+            </div>
+            <div>
+                <label class="label" for="image">Select images:</label>
+                <input class="field" type="file" name="image" accept="image/*" />
             </div>
             <div>
                 <label class="label hike" for="notes">Hike Notes:</label>

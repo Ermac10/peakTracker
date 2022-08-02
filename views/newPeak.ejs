@@ -1,6 +1,9 @@
 <div class="new-container">
+    <img id="user-image" src="/Peak-Bagger.jpeg"></img>
     <h1 class="welcome-title">Bag a New Peak</h1>
+    <h3 id="user-name">USER NAME</h3>
     <a class="button" href="/user" type="button">Return to Profile</a>
+    <!-- enctype="multipart/form-data" -->
     <div class="newForm-container">
         <form class="form-new" action="/user/" method="POST">
         
@@ -45,7 +48,12 @@
                 <label class="label" for="drink">Number of Drinks:</label>
                 <input class="field" type="number" name="drink" id="drink">
             </div>
-        
+            
+            <div>
+                <label class="label" for="image">Select images:</label>
+                <input class="field" type="file" name="image" accept="image/*" />
+            </div>
+              
             <div>
                 <label class="label hike" for="notes">Hike Notes:</label>
                 <textarea class="area" id="notes" name="notes" rows="4" cols="45">

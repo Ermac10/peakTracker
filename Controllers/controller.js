@@ -1,10 +1,31 @@
 // Import Models
 const Peak = require('../Models/peakSchema.js')
-const seed = require("../Models/peaksSeed.js");
+// const seed = require("../Models/peaksSeed.js");
 
 // Initialize Router Object
 const express = require('express');
 const router = express.Router()
+
+// Multer
+// const multer = require('multer');
+// const path = require('path');
+// const fs = require('file-system');
+// const ObjectId = require('mongodb').ObjectId;
+
+// Multer - SET STORAGE
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, 'images')
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.fieldname + '-' + Date.now())
+//     }
+//   })
+   
+//   const upload = multer({ storage: storage })
+  // Multer - SET STORAGE
+
+// Multer
 
 const fourteener = [
     {Peak: 'Mt. Elbert', Elevation: '14,438', Range: 'Sawatch Range'},
@@ -84,6 +105,25 @@ router.get('/user/<% peak._id %>', (req, res) => {
         res.render('showPeak.ejs', )
     })
 })
+// Multer
+// router.get('/photos', (req, res) => {
+//     Peak.collection('myCollection').find().toArray((err, result) => {
+//         const imgArray = result.map(element => element._id);
+//         console.log(imgArray);
+//         if (err) return console.log(err)
+//         res.send(imgArray)
+ 
+//     })
+// });
+// router.get('/photo/:id', (req, res) => {
+//     var filename = req.params.id;
+//     Peak.collection('myCollection').findOne({ '_id': ObjectId(filename) }, (err, result) => {
+//         if (err) return console.log(err)
+//         res.contentType('image/jpeg');
+//         res.send(result.image.buffer)
+//     })
+// })
+// Multer
 
 // NEW
 router.get('/user/new', (req, res) => {
@@ -109,12 +149,41 @@ router.put('/user/:id', (req, res) => {
     )
 })
 
- // CREATE
- router.post('/user', (req, res) => {
+
+  // CREATE
+  router.post('/user', (req, res) => {
     Peak.create(req.body, (err, newPeak) => {
         res.redirect('/user')
     })
 })
+// Multer
+// router.post('/user', upload.array('image', 12), (req, res, next) => {
+//     const files = req.files
+//     if (!files) {
+//       const error = new Error('Please choose files')
+//       error.httpStatusCode = 400
+//       return next(error)
+//     }
+//       res.send(files)
+//   })
+//   router.post('/user', upload.single('image'), (req, res) => {
+//     let img = fs.readFileSync(req.file.path);
+//     let encode_image = img.toString('base64');
+    // Define a JSONobject for the image attributes for saving to database
+ 
+//     let finalImg = {
+//         contentType: req.file.mimetype,
+//         image: Buffer.from(encode_image, 'base64')
+//     };
+//      Peak.collection('myCollection').insertOne(finalImg, (err, result) => {
+//         console.log(result)
+//         if (err) return console.log(err)
+//         console.log('saved to database')
+//         res.redirect('/user/:id')
+//     })
+// })
+ // Multer
+
 
  // EDIT
 router.get('/user/:id/edit', (req, res) => {
@@ -129,6 +198,7 @@ router.get('/user/:id/edit', (req, res) => {
         res.render('showPeak.ejs', {foundPeak})
     })
 })
+
 
 
 

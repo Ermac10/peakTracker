@@ -8,9 +8,10 @@ const peakSchema = new Schema({
     start: { type: String, required: true },
     summited: { type: String, required: false},
     end: { type: String, required: true},
-    drink: {type: Number, required: false},
+    drink: { type: Number, required: false},
+    image: { data: Buffer, contentType: String, required: false},
     notes: { type: String, required: false },
     
-    }, {timestamps: true});
+    });
     
 module.exports = mongoose.model('peak', peakSchema)

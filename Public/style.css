@@ -13,6 +13,10 @@ h2, h3, h4 {
         
    
 }
+h2 {
+    text-align: center ;
+    margin-bottom: 0px;
+}
 table {
     justify-content: center;
     width:45%;
@@ -92,11 +96,6 @@ td:hover {
     background-color: #D64045;
     
 }
-.user {
-    display:flex;
-    justify-content: flex-start;
-    font-size: 50px;
-}
 .button {
         font-family: 'Bebas Neue', cursive;
         font-size: 15px;
@@ -112,15 +111,19 @@ td:hover {
 .button:hover {
     background-color: #D64045;
 }
-.peak-container {
-   position:relative;
-}
-.new-container, .edit-container {
+.new-container, .edit-container, .show-container {
     height: 300px;
     position: relative;
 }
-.form-new, .form-edit {
-    background-image: url('/Peak-Bagger.jpeg');
+.collapsible {
+    cursor: pointer;
+}
+#bagged-table, #attempted-table, #unattempted-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-new, .form-edit, #show-table{
+    background-image: url('Peak-Bagger.jpeg');
     background-position: center;
     background-size: contain;
     border: solid #46443C;
@@ -159,10 +162,6 @@ td:hover {
     background-color: #0F0736;
     opacity:.8;
 }
-.show-container {
-    height: 300px;
-    position: relative;
-}
 .showData-container {
     position:absolute;
     top: 100%;
@@ -188,4 +187,24 @@ td:hover {
 }
 .show-data {
     width: 500px;
+}
+#user-name {
+    position:relative;
+    margin-bottom:  0px;
+    margin-top: 45px;
+}
+#bag-peak {
+    position: absolute;
+    margin-top: 0px;
+}
+#bagged-header {
+    margin-top: 0px;
+}
+#user-image {
+    position: fixed;
+    margin-left: 1px;
+    margin-bottom: 3px;
+    max-block-size: 110px;
+    border: solid 2px;
+    border-color: #46443C;
 }

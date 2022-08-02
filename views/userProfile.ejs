@@ -1,11 +1,13 @@
-<h1 class="welcome-title">Peaker Baggins</h1>
-<h2 class ="">USER PROFILE</h2>
-<a class="button" href="/user/new" type="button">Bag Another Peak</a>
+<div class="user-container">
+    <img id="user-image" src="/Peak-Bagger.jpeg"></img>
+    <h1 class="welcome-title">Peaker Baggins</h1>
+    <h3 id="user-name">USER NAME</h3>
+    <a class="button" id="bag-peak" href="/user/new" type="button">Bag Another Peak</a>
 
-<div class="peak-container">
+
     <div class="bagged-container">
-        <h3>BAGGED</h3>
-            <table>
+        <h2 id="bagged-header">BAGGED</h2>
+            <table id="bagged-table">
                 <thead>
                     <tr>
                         <th>PEAK</th>
@@ -14,24 +16,24 @@
                     </tr>
                 </thead>
         <% allPeaks.forEach(peak => { if(peak.bagged===true) {%>
-                <table>
+                <table id="bagged-table">
                     <tbody>
                         <tr>
-                            <td>
+                            <td class="bagged-data">
                                 <div>
-                                    <a href="/user/<%=peak._id%>"><%= peak.peak %></a>
+                                    <a class="label" href="/user/<%=peak._id%>"><%= peak.peak %></a>
                                 </div>
                             </td>
                         <% fourteener.map(peakInfo => { 
                             if(peak.peak === peakInfo.Peak) {%>
-                            <td>
+                            <td class="bagged-data">
                                 <div>
-                                 <p> <%= peakInfo.Elevation %><%;%></p>
+                                 <p class="label"> <%= peakInfo.Elevation %><%;%></p>
                                 </div>
                             </td>
-                            <td>
+                            <td class="bagged-data">
                                 <div>
-                                    <p> <%= peakInfo.Range %> <%}%></p>
+                                    <p class="label"> <%= peakInfo.Range %> <%}%></p>
                                 </div>
                             </td>
                         <%})%>
@@ -41,9 +43,10 @@
             </table>
         <%}});%> 
     </div>
+
     <div class="attempted-container">
-        <h3>ATTEMPTED</h3>
-            <table>
+        <h2>ATTEMPTED</h2>
+            <table id="attempted-table">
                 <thead>
                     <tr>
                         <th>PEAK</th>
@@ -52,24 +55,24 @@
                     </tr>
                 </thead>
         <% allPeaks.forEach(peak => { if(peak.bagged===false) {%>
-                <table>
+                <table id="attempted-table">
                     <tbody>
                         <tr>
                             <td>
-                                <a href="/user/<%=peak._id%>"><%= peak.peak %></a>
+                                <a class="label" href="/user/<%=peak._id%>"><%= peak.peak %></a>
                             </td>
                     
                         <% fourteener.map(peakInfo => { 
                             if(peak.peak === peakInfo.Peak) {%>
                             <td>
                                 <div>
-                                    <p> <%= peakInfo.Elevation %> <%;%></p>
+                                    <p class="label"> <%= peakInfo.Elevation %> <%;%></p>
                                 </div>
                             </td>
                 
                             <td>
                                 <div>
-                                    <p> <%= peakInfo.Range %> <%}%></p>
+                                    <p class="label"> <%= peakInfo.Range %> <%}%></p>
                                 </div>
                             </td>
                         <%}) %>
@@ -83,8 +86,8 @@
     </div>
 
     <div class="unattempted-container">
-        <h3>UNATTEMPTED</h3>
-            <table>
+        <h2>UNATTEMPTED</h2>
+            <table id="unattempted-table">
                 <thead>
                     <tr>
                         <th>PEAK</th>
@@ -106,22 +109,22 @@
             ];
 
             difference.map(unPeak => {%>
-                <table>
+                <table id="unattempted-table">
                     <tbody>
                         <tr>
                             <td>
                                 <div>
-                                    <p><%= unPeak.Peak %></p>
+                                    <p class="label"><%= unPeak.Peak %></p>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <p><%= unPeak.Elevation %></p>
+                                    <p class="label"><%= unPeak.Elevation %></p>
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <p><%= unPeak.Range %></p>
+                                    <p class="label"><%= unPeak.Range %></p>
                                 </div>
                             </td>
                         </tr>
@@ -131,6 +134,7 @@
         <%})%>
     </div>
 </div>
+
 
 
 
