@@ -21,7 +21,7 @@ const morgan = require('morgan');
 const peakSchema = require('./Models/peakSchema');
 const MongoURL = process.env.MONGO_URL;
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 
 // CONFIGURATION
