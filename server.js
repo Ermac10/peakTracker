@@ -8,7 +8,7 @@ require('dotenv').config()
 // Sessions
 
 // Multer
-const multer = require('multer');
+
 const path = require('path');
 // Multer
 
